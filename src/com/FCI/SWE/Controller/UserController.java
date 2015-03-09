@@ -62,6 +62,7 @@ public class UserController {
 	public Response signUp() {
 		return Response.ok(new Viewable("/jsp/register")).build();
 	}
+	
 
 	
 	@GET
@@ -91,6 +92,17 @@ public class UserController {
 	@Path("/login")
 	public Response login() {
 		return Response.ok(new Viewable("/jsp/login")).build();
+	}
+	/**
+	 * Action function to render logout page this function will be executed using
+	 * url like this /rest/logout
+	 * 
+	 * @return logout page
+	 */
+	@GET
+	@Path("/logout")
+	public Response logout(){
+		return UserController.this.logout();
 	}
 
 	/**

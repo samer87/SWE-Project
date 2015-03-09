@@ -92,5 +92,14 @@ public class UserServices {
 		return object.toString();
 
 	}
+	@POST
+	@Path("/Logout")
+	public String logout(@FormParam("uname") String uname){
+		JSONObject ob=new JSONObject();
+		ob.get(uname);
+		ob.remove(uname);
+		return ob.toString();
+	}
+	
 
 }
